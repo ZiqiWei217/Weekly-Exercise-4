@@ -19,3 +19,11 @@ gold_medals_by_country <- olympics_data %>%
 
 # View the total gold medals for each country
 print(gold_medals_by_country)
+
+# c. For each year, how many total medals were given out?
+total_medals_by_year <- olympics_data %>%
+  group_by(year) %>%
+  summarise(total_medals_awarded = sum(total.medals))
+
+# View the total medals for each year
+print(total_medals_by_year)
