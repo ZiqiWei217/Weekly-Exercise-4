@@ -11,3 +11,11 @@ olympics_data <- olympics_data %>%
 
 # View the dataset with the new column
 print(head(olympics_data))
+
+# b. For each country, how many gold medals has it won?
+gold_medals_by_country <- olympics_data %>%
+  group_by(country) %>%
+  summarise(total_gold_medals = sum(gold))
+
+# View the total gold medals for each country
+print(gold_medals_by_country)
